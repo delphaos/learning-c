@@ -6,11 +6,13 @@ int main() {
     int a, b;
     char c;
 
-    while (scanf("%d %d%c", &a, &b, &c) != 3 || (c != ' ' && c != '\n')) {
+    while (scanf("%d %d%c", &a, &b, &c) != 3 || c != '\n') {
         printf("n/a\n");
         while (getchar() != '\n');
     }
     printf("%d\n", find_max(a, b));
+
+    getchar();
 
     return 0;
 }

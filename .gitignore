@@ -1,13 +1,12 @@
-# Скомпилированные файлы (бинарники)
-*.out
-Quest_*
+# Ignore all files
+*
 
-# Объектные файлы
-*.o
+# Exclusion (must be saved):
+!*/
+!*.c
+!Makefile
+!.gitignore
 
-# Системные папки VS Code
-.vscode/
+# Allowlist for source files and configs
+!.vscode/
 
-# Временные файлы
-*.swp
-*~

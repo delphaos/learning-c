@@ -1,12 +1,13 @@
 #include <stdio.h>
-#define GALLEON 17
+#define GALEON 17
 #define SICKLE 29
 
-// Курс обмена монет 1 galleon = 17 sickles , 1 sickles = 29 knats
+// Курс обмена монет 1 galeon = 17 sickles , 1 sickle = 29 knats
 
 int main() {
-  int g1, s1, k1, g2, s2, k2;  // монет каждого номинала в каждом кошельке
-  int gal_sum, sick_sum, knat_sum;  // общее количество монет каждого номинала
+  int g1, s1, k1, g2, s2, k2;
+  int gal_sum, sick_sum, knat_sum;
+  int gal_res, sick_res, knat_res;
 
   scanf("%d %d %d", &g1, &s1, &k1);
   scanf("%d %d %d", &g2, &s2, &k2);
@@ -18,14 +19,11 @@ int main() {
 
   // Перерасчет итоговой суммы
 
-  k2 = k1 % 29;
-  s2 = (s1 + k1 / 29) % 17;
-  g2 = g1 + (s1 + k1 / 29) / 17;
+  knat_res = knat_sum % SICKLE;
+  sick_res = (sick_sum + knat_sum / SICKLE) % GALEON;
+  gal_res = gal_sum + (sick_sum + knat_sum / SICKLE) / GALEON;
 
-  k2 = knat_sum % SICKLE;
-  s2 = ();
-
-  printf("%d %d %d", g2, s2, k2);
+  printf("%d %d %d\n", gal_res, sick_res, knat_res);
 
   while (getchar() != '\n');
 
